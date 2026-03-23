@@ -1,8 +1,8 @@
 #include "HyperUSSAdapter.h"
 
 // Include HyperUSS dependencies from ComparisonSchemes
-#include "../../../../ComparisonSchemes/HyperUSS/CPU/Common/Util.h"
-#include "../../../../ComparisonSchemes/HyperUSS/CPU/Multiple/Hyper.h"
+#include "../../../ComparisonSchemes/HyperUSS/CPU/Common/Util.h"
+#include "../../../ComparisonSchemes/HyperUSS/CPU/Multiple/Hyper.h"
 
 // Implementation
 class HyperUSSAdapterImpl {

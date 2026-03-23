@@ -11,24 +11,6 @@ include_directories(src src/core src/hash src/io src/experiment)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(PCAP REQUIRED libpcap)
 
-# Legacy Huffman Sketch executable (disabled - files deleted)
-# set(HUFFMAN_SOURCES
-#     src/huffman_main.cpp
-#     src/core/CountMinSketch.cpp
-#     src/core/HuffmanTree.cpp
-#     src/core/HuffmanLearner.cpp
-#     src/core/BloomFilter.cpp
-#     src/io/PcapReader.cpp
-#     src/experiment/ExperimentRunner.cpp
-#     src/experiment/Metrics.cpp
-#     src/experiment/Logger.cpp
-#     src/hash/hash.cpp
-# )
-#
-# add_executable(HuffmanSketch ${HUFFMAN_SOURCES})
-# target_include_directories(HuffmanSketch PRIVATE ${PCAP_INCLUDE_DIRS})
-# target_link_libraries(HuffmanSketch ${PCAP_LIBRARIES})
-
 # Adaptive Huffman Sketch executable
 set(ADAPTIVE_SOURCES
     src/adaptive_main.cpp
@@ -45,34 +27,6 @@ set(ADAPTIVE_SOURCES
 add_executable(AdaptiveHuffmanSketch ${ADAPTIVE_SOURCES})
 target_include_directories(AdaptiveHuffmanSketch PRIVATE ${PCAP_INCLUDE_DIRS})
 target_link_libraries(AdaptiveHuffmanSketch ${PCAP_LIBRARIES})
-
-# Partial Key Comparison executable
-set(COMPARISON_SOURCES
-    src/comparison_main.cpp
-    src/core/AdaptiveHuffmanTree.cpp
-    src/core/AdaptiveHuffmanLearner.cpp
-    src/core/TailSketch.cpp
-    src/io/PcapReader.cpp
-    src/hash/hash.cpp
-)
-
-add_executable(PartialKeyComparison ${COMPARISON_SOURCES})
-target_include_directories(PartialKeyComparison PRIVATE ${PCAP_INCLUDE_DIRS})
-target_link_libraries(PartialKeyComparison ${PCAP_LIBRARIES})
-
-# Beta Grid Search executable
-set(BETA_GRID_SOURCES
-    src/beta_grid_search.cpp
-    src/core/AdaptiveHuffmanTree.cpp
-    src/core/AdaptiveHuffmanLearner.cpp
-    src/core/TailSketch.cpp
-    src/io/PcapReader.cpp
-    src/hash/hash.cpp
-)
-
-add_executable(BetaGridSearch ${BETA_GRID_SOURCES})
-target_include_directories(BetaGridSearch PRIVATE ${PCAP_INCLUDE_DIRS})
-target_link_libraries(BetaGridSearch ${PCAP_LIBRARIES})
 
 # Sketch Comparison executable
 set(SKETCH_COMPARISON_SOURCES
@@ -96,17 +50,17 @@ target_include_directories(SketchComparison PRIVATE
     src/external_sketches/common
     src/external_sketches/adapters
     src/external_sketches/structs
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/CocoSketch/CPU/Common
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/CocoSketch/CPU/Multiple
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/CocoSketch/CPU/Struct
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/HyperUSS/CPU/Common
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/HyperUSS/CPU/Multiple
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/SandwichSketch/CPU/Algos
-    ${CMAKE_SOURCE_DIR}/../ComparisonSchemes/SandwichSketch/CPU/Common
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/CocoSketch/CPU/Common
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/CocoSketch/CPU/Multiple
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/CocoSketch/CPU/Struct
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/HyperUSS/CPU/Common
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/HyperUSS/CPU/Multiple
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/SandwichSketch/CPU/Algos
+    ${CMAKE_SOURCE_DIR}/ComparisonSchemes/SandwichSketch/CPU/Common
 )
 target_link_libraries(SketchComparison ${PCAP_LIBRARIES})
 # Allow multiple definitions due to external sketch headers
 target_link_options(SketchComparison PRIVATE "-Wl,--allow-multiple-definition")
 
 # Installation
-install(TARGETS AdaptiveHuffmanSketch PartialKeyComparison BetaGridSearch SketchComparison DESTINATION bin)
+install(TARGETS AdaptiveHuffmanSketch SketchComparison DESTINATION bin)

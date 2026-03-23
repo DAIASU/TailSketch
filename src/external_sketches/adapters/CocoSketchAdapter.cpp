@@ -1,9 +1,9 @@
 #include "CocoSketchAdapter.h"
 
 // Include CocoSketch dependencies from ComparisonSchemes
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Common/Util.h"
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Multiple/MultiAbstract.h"
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Multiple/OurHard.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Common/Util.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Multiple/MultiAbstract.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Multiple/OurHard.h"
 
 // Implementation
 class CocoSketchAdapterImpl {

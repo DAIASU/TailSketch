@@ -1,10 +1,10 @@
 #include "USSAdapter.h"
 
 // Include USS dependencies from ComparisonSchemes
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Common/Util.h"
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Struct/StreamSummary.h"
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Multiple/MultiAbstract.h"
-#include "../../../../ComparisonSchemes/CocoSketch/CPU/Multiple/USS.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Common/Util.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Struct/StreamSummary.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Multiple/MultiAbstract.h"
+#include "../../../ComparisonSchemes/CocoSketch/CPU/Multiple/USS.h"
 
 // Implementation
 class USSAdapterImpl {

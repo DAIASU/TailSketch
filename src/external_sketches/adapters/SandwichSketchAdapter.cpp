@@ -3,9 +3,9 @@
 #include <cassert>  // Required by SandwichSketch's Util.h
 
 // Include SandwichSketch dependencies from ComparisonSchemes
-#include "../../../../ComparisonSchemes/SandwichSketch/CPU/Common/Util.h"
-#include "../../../../ComparisonSchemes/SandwichSketch/CPU/Algos/Abstract.h"
-#include "../../../../ComparisonSchemes/SandwichSketch/CPU/Algos/Ours_ItemFull.h"
+#include "../../../ComparisonSchemes/SandwichSketch/CPU/Common/Util.h"
+#include "../../../ComparisonSchemes/SandwichSketch/CPU/Algos/Abstract.h"
+#include "../../../ComparisonSchemes/SandwichSketch/CPU/Algos/Ours_ItemFull.h"
 
 // Implementation
 class SandwichSketchAdapterImpl {
